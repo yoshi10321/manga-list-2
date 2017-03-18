@@ -1,0 +1,9 @@
+$font-stack:    'Andale Mono', sans-serif;
+$primary-color: #286090;
+$bg-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $bg-color;
+}
