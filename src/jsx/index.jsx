@@ -11,7 +11,7 @@ import thunk from 'redux-thunk'
 import reducer from './reducers/reducer.jsx'
 import Top from './containers/Top.jsx'
 
-// require('../scss/index.scss')
+require('../scss/index.scss')
 
 const store = applyMiddleware(thunk)(createStore)(reducer)
 
