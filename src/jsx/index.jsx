@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import reducer from './reducers/reducer.jsx'
-import Top from './containers/Top.jsx'
+import Top from './containers/top.jsx'
 
 require('../scss/index.scss')
 
