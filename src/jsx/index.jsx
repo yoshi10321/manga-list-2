@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {
   BrowserRouter as Router,
   Route
@@ -17,11 +16,9 @@ const store = applyMiddleware(thunk)(createStore)(reducer)
 
 render(
   <Router>
-    <MuiThemeProvider>
-      <Provider store={store}>
-        <Route path='/' component={Top} />
-      </Provider>
-    </MuiThemeProvider>
+    <Provider store={store}>
+      <Route path='/' component={Top} />
+    </Provider>
   </Router>,
   document.getElementById('root')
 )
