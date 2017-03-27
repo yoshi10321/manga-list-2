@@ -24,8 +24,7 @@ export const fetchUserList = () => {
       'users',
     ).then(res => {
       dispatch(fetchUserSuccess(res.data))
-    }).catch(err => {
-      console.log(err)
+    }).catch(() => {
       dispatch(fetchUserError())
     })
   }

@@ -9,16 +9,20 @@ import {
 import thunk from 'redux-thunk'
 import reducer from './reducers/reducer.jsx'
 import Top from './containers/top.jsx'
+import Detail from './containers/detail.jsx'
 
 require('../scss/index.scss')
 
 const store = applyMiddleware(thunk)(createStore)(reducer)
 
 render(
-  <Router>
-    <Provider store={store}>
-      <Route path='/' component={Top} />
-    </Provider>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path='/' component={Top} />
+        <Route path='/detail' component={Detail} />
+      </div>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )

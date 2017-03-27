@@ -7,7 +7,6 @@ export class MangaList extends React.PureComponent {
 
   render () {
     const { mangaList } = this.props
-    console.log(mangaList)
     let listItems
     if (mangaList) {
       listItems = mangaList.data.map((manga) =>

@@ -18,10 +18,10 @@ function fetchMangaError () {
   }
 }
 
-export const fetchMangaList = () => {
+export const fetchManga = () => {
   return dispatch => {
     return client.get(
-      'mangas',
+      'mangas/5',
     ).then(res => {
       dispatch(fetchMangaSuccess(res.data))
     }).catch(() => {

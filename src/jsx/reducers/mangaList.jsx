@@ -1,4 +1,4 @@
-import { types } from '../actions/manga'
+import { types } from '../actions/fetchMangaList'
 
 const defaultState = {
   data: []
@@ -9,12 +9,12 @@ function mangaList (state = defaultState, action) {
     data
   } = action
   switch (action.type) {
-    case types.FETCH_MANGA_SUCCESS: {
+    case types.FETCH_MANGA_LIST_SUCCESS: {
       return {
         data
       }
     }
-    case types.FETCH_MANGA_ERROR: {
+    case types.FETCH_MANGA_LIST_ERROR: {
       return {}
     }
     default:

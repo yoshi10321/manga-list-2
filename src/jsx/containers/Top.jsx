@@ -2,7 +2,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import MangaList from '../components/mangaList'
-import { fetchMangaList } from '../actions/manga'
+import { fetchMangaList } from '../actions/fetchMangaList'
 
 injectTapEventPlugin()
 
