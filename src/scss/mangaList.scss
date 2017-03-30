@@ -3,11 +3,30 @@
   width: 50%;
 }
 
+.manga-list-container {
+  position: relative;
+  height: 520px;
+  margin: 0 20px 30px 20px;
+  overflow: hidden;
+}
+
+.manga-list-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, .6)
+}
+
 .manga-list-title {
   font-size: 30px;
 }
 
+.manga-list-read-number {
+  font-size: 50px;
+  right: 0;
+}
+
 .manga-list-img {
-  height: 520px;
+  width: 100%;
 }
 

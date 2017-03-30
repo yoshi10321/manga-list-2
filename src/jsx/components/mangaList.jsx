@@ -11,8 +11,13 @@ export class MangaList extends React.PureComponent {
     if (mangaList) {
       listItems = mangaList.data.map((manga) =>
         <li key={manga.id} className='manga-list-item'>
-          <img src={manga.img} className='manga-list-img' />
-          <p className='manga-list-title'>{manga.title}</p>
+          <div className='manga-list-container'>
+            <img src={manga.img} className='manga-list-img' />
+            <div className='manga-list-overlay'>
+              <p className='manga-list-title'>{manga.title}</p>
+              <p className='manga-list-read-number'>{manga.readNumber}</p>
+            </div>
+          </div>
         </li>
       )
     }
