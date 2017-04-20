@@ -4,13 +4,22 @@ import { connect } from 'react-redux'
 require('../../scss/mangaList.scss')
 
 export class MangaList extends React.PureComponent {
+  constructor (props) {
+    super(props)
+    this.editManga = this.editManga.bind(this)
+  }
+
+  editManga (manga) {
+    const { dispatch } = this.props
+    dispatch(this.props.showEditCard(manga))
+  }
 
   render () {
     const { mangaList } = this.props
     let listItems
     if (mangaList) {
       listItems = mangaList.data.map((manga) =>
-        <li key={manga.id} className='manga-list-item'>
+        <li key={manga.id} className='manga-list-item' onClick={() => this.editManga(manga)}>
           <div className='manga-list-container'>
             <img src={manga.img} className='manga-list-img' />
             <div className='manga-list-overlay'>
@@ -33,7 +42,10 @@ export class MangaList extends React.PureComponent {
 }
 
 MangaList.propTypes = {
-  mangaList: PropTypes.object
+  mangaList: PropTypes.object,
+  manga: PropTypes.object,
+  dispatch: PropTypes.func.isRequired,
+  showEditCard: PropTypes.func.isRequired
 }
 
 function mapStateToProps (state) {
