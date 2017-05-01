@@ -13,6 +13,7 @@ function editCard (state = defaultState, action) {
   switch (action.type) {
     case types.SHOW_EDIT_CARD: {
       return {
+        id: manga.id,
         title: manga.title,
         readNumber: manga.readNumber,
         img: manga.img
