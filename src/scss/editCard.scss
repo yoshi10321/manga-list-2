@@ -4,24 +4,25 @@
   height: 30%;
   bottom: 0px;
   background: white;
-  box-shadow: 10px 15px 15px 40px rgba(0,0,0,0.5);
+  box-shadow: 5px 7px 7px 20px rgba(0,0,0,0.5);
   font-size: 120px;
 }
 
 .edit-card-enter {
-  opacity: 0.01;
+  height: 0;
 }
 
 .edit-card-enter.edit-card-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+  height: 30%;
+  transition: height 300ms ease-in;
+  transition-delay: 150ms
 }
 
 .edit-card-leave {
-  opacity: 1;
+  height: 30%;
 }
 
 .edit-card-leave.edit-card-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  height: 0;
+  transition: height 150ms ease-in;
 }
