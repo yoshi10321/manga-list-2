@@ -8,6 +8,7 @@ export class EditCard extends React.PureComponent {
 
   render () {
     const { editCard } = this.props
+
     return (
       <CSSTransitionGroup
         transitionName='edit-card'
