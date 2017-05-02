@@ -1,9 +1,11 @@
-import { types } from '../actions/showEditCard'
+import { SHOW_EDIT_CARD } from '../actions/showEditCard'
+import { CLOSE_EDIT_CARD } from '../actions/closeEditCard'
 
 const defaultState = {
   title: '',
   readNumber: 0,
-  img: ''
+  img: '',
+  selected: false
 }
 
 function editCard (state = defaultState, action) {
@@ -11,12 +13,22 @@ function editCard (state = defaultState, action) {
     manga
   } = action
   switch (action.type) {
-    case types.SHOW_EDIT_CARD: {
+    case SHOW_EDIT_CARD: {
       return {
         id: manga.id,
         title: manga.title,
         readNumber: manga.readNumber,
-        img: manga.img
+        img: manga.img,
+        selected: true
+      }
+    }
+    case CLOSE_EDIT_CARD: {
+      return {
+        id: 0,
+        title: '',
+        readNumber: 0,
+        img: '',
+        selected: false
       }
     }
     default:

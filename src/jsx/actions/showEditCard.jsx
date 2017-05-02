@@ -1,10 +1,8 @@
-export const types = {
-  SHOW_EDIT_CARD: 'SHOW_EDIT_CARD'
-}
+export const SHOW_EDIT_CARD = 'SHOW_EDIT_CARD'
 
 export const showEditCard = (manga) => {
   return {
-    type: types.SHOW_EDIT_CARD,
+    type: SHOW_EDIT_CARD,
     manga
   }
 }
