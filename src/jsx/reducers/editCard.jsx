@@ -1,11 +1,13 @@
 import { SHOW_EDIT_CARD } from '../actions/showEditCard'
 import { CLOSE_EDIT_CARD } from '../actions/closeEditCard'
+import { EDIT_COUNT, EDIT_TITLE } from '../actions/switchEditContent'
 
 const defaultState = {
   title: '',
   readNumber: 0,
   img: '',
-  selected: false
+  selected: false,
+  contentType: 'count'
 }
 
 function editCard (state = defaultState, action) {
@@ -29,6 +31,26 @@ function editCard (state = defaultState, action) {
         readNumber: 0,
         img: '',
         selected: false
+      }
+    }
+    case EDIT_COUNT: {
+      return {
+        id: state.id,
+        title: state.title,
+        readNumber: state.readNumber,
+        img: state.img,
+        selected: state.selected,
+        contentType: 'count'
+      }
+    }
+    case EDIT_TITLE: {
+      return {
+        id: state.id,
+        title: state.title,
+        readNumber: state.readNumber,
+        img: state.img,
+        selected: state.selected,
+        contentType: 'title'
       }
     }
     default:
