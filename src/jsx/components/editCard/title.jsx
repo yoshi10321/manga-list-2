@@ -1,15 +1,31 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+require('../../../scss/title.scss')
+
 export class Title extends React.PureComponent {
 
+  constructor (props) {
+    super(props)
+    this.state = {
+      textValue: props.title
+    }
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange (e) {
+    this.setState({
+      textValue: e.target.value
+    })
+  }
+
   render () {
-    const { title } = this.props
+    // const { title } = this.props
 
     let titleEditContainer = ''
     titleEditContainer = (
-      <div className='counter' >
-        <input type='text' value={title} />
+      <div className='title' >
+        <input type='text' value={this.state.textValue} onChange={this.onChange} />
       </div>
     )
 
@@ -22,7 +38,7 @@ export class Title extends React.PureComponent {
 }
 
 Title.propTypes = {
-  title: PropTypes.object,
+  title: PropTypes.string,
   dispatch: PropTypes.func.isRequired
 }
 

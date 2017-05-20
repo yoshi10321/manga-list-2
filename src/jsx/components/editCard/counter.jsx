@@ -1,17 +1,37 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+require('../../../scss/counter.scss')
+
 export class Counter extends React.PureComponent {
+  constructor (props) {
+    super(props)
+    this.state = {
+      count: props.readNumber
+    }
+    this.inclementCount = this.inclementCount.bind(this)
+    this.declementCount = this.declementCount.bind(this)
+  }
+
+  inclementCount () {
+    this.setState({
+      count: this.state.count + 1
+    })
+  }
+
+  declementCount () {
+    this.setState({
+      count: this.state.count - 1
+    })
+  }
 
   render () {
-    const { readNumber } = this.props
-
     let counter = ''
     counter = (
       <div className='counter' >
-        <button>-</button>
-        { readNumber }
-        <button>+</button>
+        <button onClick={this.declementCount}>-</button>
+        { this.state.count }
+        <button onClick={this.inclementCount}>+</button>
       </div>
     )
 
@@ -24,7 +44,7 @@ export class Counter extends React.PureComponent {
 }
 
 Counter.propTypes = {
-  readNumber: PropTypes.object,
+  readNumber: PropTypes.number,
   dispatch: PropTypes.func.isRequired
 }
 
