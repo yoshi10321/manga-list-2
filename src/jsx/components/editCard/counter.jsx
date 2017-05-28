@@ -1,7 +1,20 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import RaisedButton from 'material-ui/RaisedButton'
 
 require('../../../scss/counter.scss')
+
+const declementStyle = {
+  // fontSize: '150px',
+  // margin: '12px',
+  // height: '120px',
+  // width: '120px'
+}
+
+const inclementStyle = {
+  // fontSize: '150px',
+  // margin: '12px'
+}
 
 export class Counter extends React.PureComponent {
   constructor (props) {
@@ -29,9 +42,9 @@ export class Counter extends React.PureComponent {
     let counter = ''
     counter = (
       <div className='counter' >
-        <button onClick={this.declementCount}>-</button>
-        { this.state.count }
-        <button onClick={this.inclementCount}>+</button>
+        <RaisedButton label='-' style={declementStyle} onClick={this.declementCount} />
+        <span className='counter-number'>{ this.state.count }</span>
+        <RaisedButton label='+' style={inclementStyle} onClick={this.inclementCount} />
       </div>
     )
 

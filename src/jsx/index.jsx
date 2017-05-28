@@ -9,7 +9,7 @@ import {
 import thunk from 'redux-thunk'
 import reducer from './reducers/reducer.jsx'
 import Top from './containers/top.jsx'
-import Detail from './containers/detail.jsx'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 require('../scss/index.scss')
 
@@ -17,12 +17,13 @@ const store = applyMiddleware(thunk)(createStore)(reducer)
 
 render(
   <Provider store={store}>
-    <Router>
-      <div>
-        <Route exact path='/' component={Top} />
-        <Route path='/detail' component={Detail} />
-      </div>
-    </Router>
+    <MuiThemeProvider>
+      <Router>
+        <div>
+          <Route exact path='/' component={Top} />
+        </div>
+      </Router>
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('root')
 )

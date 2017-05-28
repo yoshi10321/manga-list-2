@@ -2,8 +2,16 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { showEditCard } from '../actions/showEditCard'
 import { fetchMangaList } from '../actions/fetchMangaList'
+import {Card, CardMedia, CardTitle} from 'material-ui/Card'
 
 require('../../scss/mangaList.scss')
+
+const titleStyle = {
+  fontSize: '15px'
+}
+const cardStyle = {
+  margin: '0 5px 7px 5px'
+}
 
 export class MangaList extends React.PureComponent {
   componentDidMount () {
@@ -17,13 +25,15 @@ export class MangaList extends React.PureComponent {
     if (mangaList) {
       listItems = mangaList.data.map((manga) =>
         <li key={manga.id} className='manga-list-item' onClick={() => dispatch(showEditCard(manga))}>
-          <div className='manga-list-container'>
-            <img src={manga.img} className='manga-list-img' />
-            <div className='manga-list-overlay'>
-              <p className='manga-list-title'>{manga.title}</p>
-              <p className='manga-list-read-number'>{manga.readNumber}</p>
-            </div>
-          </div>
+          <Card style={cardStyle}>
+            <CardMedia
+              overlay={<CardTitle title={manga.title} subtitle={manga.readNumber} titleStyle={titleStyle} />}
+              >
+              <div className='manga-list-container'>
+                <img className='manga-list-img' src={manga.img} />
+              </div>
+            </CardMedia>
+          </Card>
         </li>
       )
     }

@@ -1,29 +1,12 @@
 .manga-list-item {
   float: left;
   width: 50%;
+  list-style: none;
 }
 
 .manga-list-container {
-  position: relative;
-  height: 520px;
-  margin: 0 20px 30px 20px;
+  height: 200px;
   overflow: hidden;
-}
-
-.manga-list-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, .6)
-}
-
-.manga-list-title {
-  font-size: 30px;
-}
-
-.manga-list-read-number {
-  font-size: 50px;
-  right: 0;
 }
 
 .manga-list-img {

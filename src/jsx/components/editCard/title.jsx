@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+import TextField from 'material-ui/TextField'
 
 require('../../../scss/title.scss')
 
@@ -25,7 +26,11 @@ export class Title extends React.PureComponent {
     let titleEditContainer = ''
     titleEditContainer = (
       <div className='title' >
-        <input type='text' value={this.state.textValue} onChange={this.onChange} />
+        <TextField
+          style={{fontSize: '20px', width: '80%'}}
+          defaultValue={this.state.textValue}
+          onChange={this.onChange}
+        />
       </div>
     )
 
