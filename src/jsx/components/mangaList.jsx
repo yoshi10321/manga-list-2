@@ -40,7 +40,7 @@ export class MangaList extends React.PureComponent {
 
     return (
       <div>
-        <ul>
+        <ul className='manga-list'>
           {listItems}
         </ul>
       </div>

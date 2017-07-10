@@ -6,6 +6,8 @@ import { editCount, editTitle, editImage } from '../actions/switchEditContent'
 import Counter from './editCard/counter'
 import Title from './editCard/title'
 import Image from './editCard/image'
+import {Card, CardActions, CardMedia} from 'material-ui/Card'
+import FlatButton from 'material-ui/FlatButton'
 
 require('../../scss/editCard.scss')
 
@@ -24,7 +26,7 @@ export class EditCard extends React.PureComponent {
         editContent = <Title title={editCard.title} key={'title'} />
         break
       case 'image':
-        editContent = <Image img={editCard.img} key={'image'} />
+        editContent = <CardMedia><Image img={editCard.img} key={'image'} /></CardMedia>
         break
       default:
         editContent = <Counter readNumber={editCard.readNumber} key={'counter'} />
@@ -32,20 +34,18 @@ export class EditCard extends React.PureComponent {
 
     if (editCard.selected) {
       card = (
-        <div className='edit-card' key={editCard.id} >
+        <Card className='edit-card' key={editCard.id} >
           <div className='edit-card-content'>
             {editContent}
           </div>
           <button className='edit-card-close' onClick={() => dispatch(closeEditCard())}>close</button>
-          <div className='edit-card-menu'>
-            <ul>
-              <li><a onClick={() => dispatch(editCount())}>count</a></li>
-              <li><a onClick={() => dispatch(editTitle())}>title</a></li>
-              <li><a onClick={() => dispatch(editImage())}>img</a></li>
-              <li><a>del</a></li>
-            </ul>
-          </div>
-        </div>
+          <CardActions>
+            <FlatButton onClick={() => dispatch(editCount())} label='Count' />
+            <FlatButton onClick={() => dispatch(editTitle())} label='Title' />
+            <FlatButton onClick={() => dispatch(editImage())} label='Img' />
+            <FlatButton label='Del' />
+          </CardActions>
+        </Card>
       )
     }
 

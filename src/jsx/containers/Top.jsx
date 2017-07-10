@@ -13,7 +13,9 @@ export var Top = class Top extends React.PureComponent {
       <div>
         <h1>MANGA MANAGE</h1>
         <br />
-        <MangaList />
+        <div className='list'>
+          <MangaList />
+        </div>
         <EditCard />
       </div>
     )

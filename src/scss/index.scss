@@ -7,3 +7,7 @@ body {
   color: $primary-color;
   background-color: $bg-color;
 }
+
+.list {
+  transform: translate(calc(50vw - 50%),0);
+}

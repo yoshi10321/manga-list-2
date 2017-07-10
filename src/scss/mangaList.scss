@@ -1,7 +1,12 @@
+.manga-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .manga-list-item {
   float: left;
   width: 50%;
-  list-style: none;
 }
 
 .manga-list-container {

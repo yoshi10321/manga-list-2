@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+require('../../../scss/image.scss')
+
 export class Image extends React.PureComponent {
 
   render () {
@@ -9,7 +11,7 @@ export class Image extends React.PureComponent {
     let imageEditContainer = ''
     imageEditContainer = (
       <div>
-        <img src={img} />
+        <img className='image' src={img} />
         <button>Edit</button>
       </div>
     )
