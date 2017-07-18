@@ -38,7 +38,7 @@ export class EditCard extends React.PureComponent {
           <div className='edit-card-content'>
             {editContent}
           </div>
-          <button className='edit-card-close' onClick={() => dispatch(closeEditCard())}>close</button>
+          <i className='material-icons edit-card-close' onClick={() => dispatch(closeEditCard())}>clear</i>
           <CardActions>
             <FlatButton onClick={() => dispatch(editCount())} label='Count' />
             <FlatButton onClick={() => dispatch(editTitle())} label='Title' />

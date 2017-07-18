@@ -1,0 +1,42 @@
+.add-card {
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  bottom: 0px;
+  box-shadow: 5px 7px 7px 20px rgba(0,0,0,0.5);
+}
+
+.add-card-enter {
+  height: 0;
+}
+
+.add-card-enter.add-card-enter-active {
+  height: 150px;
+  transition: height 300ms ease-in;
+  transition-delay: 150ms
+}
+
+.add-card-leave {
+  height: 150px;
+}
+
+.add-card-leave.add-card-leave-active {
+  height: 0;
+  transition: height 150ms ease-in;
+}
+
+.add-card-content {
+  height: 100px;
+}
+
+.add-card-close {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.add-content {
+  height: 350px;
+}

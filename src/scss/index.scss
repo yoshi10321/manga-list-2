@@ -1,13 +1,9 @@
 $font-stack:    'Andale Mono', sans-serif;
-$primary-color: #ffdb16;
-$bg-color: #333;
+$primary-color: #FFFFFF;
+$bg-color: #212121;
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
   background-color: $bg-color;
-}
-
-.list {
-  transform: translate(calc(50vw - 50%),0);
 }

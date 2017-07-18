@@ -10,6 +10,8 @@ import thunk from 'redux-thunk'
 import reducer from './reducers/reducer.jsx'
 import Top from './containers/top.jsx'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 
 require('../scss/index.scss')
 
@@ -17,7 +19,7 @@ const store = applyMiddleware(thunk)(createStore)(reducer)
 
 render(
   <Provider store={store}>
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
       <Router>
         <div>
           <Route exact path='/' component={Top} />
