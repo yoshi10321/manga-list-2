@@ -18,11 +18,16 @@ function registMangaError () {
   }
 }
 
-export const registManga = () => {
+export const registManga = (title, imgUrl) => {
   return dispatch => {
     return client.post(
       'mangas',
-    ).then(res => {
+      {
+        title,
+        imgUrl
+      }
+    )
+    .then(res => {
       dispatch(registMangaSuccess(res.data))
     }).catch(() => {
       dispatch(registMangaError())

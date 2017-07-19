@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { showEditCard } from '../actions/showEditCard'
+import { closeAddCard } from '../actions/closeAddCard'
 import { fetchMangaList } from '../actions/fetchMangaList'
 import {Card, CardMedia, CardTitle} from 'material-ui/Card'
 
@@ -14,17 +15,28 @@ const cardStyle = {
 }
 
 export class MangaList extends React.PureComponent {
+  constructor (props) {
+    super(props)
+    this.showEditCard = this.showEditCard.bind(this)
+  }
+
   componentDidMount () {
     const { dispatch } = this.props
     dispatch(fetchMangaList())
   }
 
+  showEditCard (manga) {
+    const { dispatch } = this.props
+    dispatch(closeAddCard())
+    dispatch(showEditCard(manga))
+  }
+
   render () {
-    const { dispatch, mangaList } = this.props
+    const { mangaList } = this.props
     let listItems
     if (mangaList) {
       listItems = mangaList.data.map((manga) =>
-        <li key={manga.id} className='manga-list-item' onClick={() => dispatch(showEditCard(manga))}>
+        <li key={manga.id} className='manga-list-item' onClick={() => this.showEditCard(manga)}>
           <Card style={cardStyle}>
             <CardMedia
               overlay={<CardTitle title={manga.title} subtitle={manga.readNumber} titleStyle={titleStyle} />}
