@@ -5,18 +5,6 @@ import { editMangaNumber } from '../../actions/editMangaNumber'
 
 require('../../../scss/counter.scss')
 
-const declementStyle = {
-  // fontSize: '150px',
-  // margin: '12px',
-  // height: '120px',
-  // width: '120px'
-}
-
-const inclementStyle = {
-  // fontSize: '150px',
-  // margin: '12px'
-}
-
 export class Counter extends React.PureComponent {
   constructor (props) {
     super(props)
@@ -48,9 +36,9 @@ export class Counter extends React.PureComponent {
     let counter = ''
     counter = (
       <div className='counter' >
-        <FlatButton label='-' style={declementStyle} onClick={this.declementCount} />
+        <FlatButton label='-' onClick={this.declementCount} />
         <span className='counter-number'>{ this.state.count }</span>
-        <FlatButton label='+' style={inclementStyle} onClick={this.inclementCount} />
+        <FlatButton label='+' onClick={this.inclementCount} />
       </div>
     )
 
