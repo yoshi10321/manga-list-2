@@ -1,4 +1,4 @@
-import client from '../clients/sampleClient'
+import client from '../clients/apiClient'
 
 export const types = {
   FETCH_USER_SUCCESS: 'FETCH_USER_SUCCESS',

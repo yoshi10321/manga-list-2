@@ -20,16 +20,16 @@ export class EditCard extends React.PureComponent {
     let editContent = <Counter readNumber={editCard.readNumber} key={'counter'} />
     switch (editCard.contentType) {
       case 'count':
-        editContent = <Counter readNumber={editCard.readNumber} key={'counter'} />
+        editContent = <Counter id={editCard.id} readNumber={editCard.readNumber} key={'counter'} />
         break
       case 'title':
-        editContent = <Title title={editCard.title} key={'title'} />
+        editContent = <Title id={editCard.id} title={editCard.title} key={'title'} />
         break
       case 'image':
         editContent = <CardMedia><Image img={editCard.img} key={'image'} /></CardMedia>
         break
       default:
-        editContent = <Counter readNumber={editCard.readNumber} key={'counter'} />
+        editContent = <Counter id={editCard.id} readNumber={editCard.readNumber} key={'counter'} />
     }
 
     if (editCard.selected) {

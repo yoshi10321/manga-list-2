@@ -66,6 +66,7 @@ export class AddCard extends React.PureComponent {
 
 AddCard.propTypes = {
   addCard: PropTypes.object,
+  loading: PropTypes.bool,
   dispatch: PropTypes.func.isRequired
 }
 

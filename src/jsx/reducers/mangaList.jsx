@@ -10,9 +10,9 @@ function mangaList (state = defaultState, action) {
   } = action
   switch (action.type) {
     case types.FETCH_MANGA_LIST_SUCCESS: {
-      return {
+      return Object.assign({}, state, {
         data
-      }
+      })
     }
     case types.FETCH_MANGA_LIST_ERROR: {
       return {}
